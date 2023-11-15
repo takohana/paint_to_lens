@@ -1,0 +1,330 @@
+[gd_scene load_steps=4 format=3 uid="uid://ug0d45jnf60f"]
+
+[ext_resource type="Script" path="res://config_window.gd" id="1_jda8c"]
+[ext_resource type="Script" path="res://app_config.gd" id="2_7fytw"]
+[ext_resource type="Script" path="res://default_config.gd" id="3_38b0v"]
+
+[node name="ConfigWindow" type="Window"]
+title = "Settings"
+position = Vector2i(0, 36)
+size = Vector2i(360, 720)
+exclusive = true
+unresizable = true
+script = ExtResource("1_jda8c")
+
+[node name="AppConfig" type="VBoxContainer" parent="."]
+offset_left = 10.0
+offset_right = 350.0
+offset_bottom = 720.0
+script = ExtResource("2_7fytw")
+
+[node name="PresetFileSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="LabelPresetName" type="Label" parent="AppConfig/PresetFileSetting"]
+layout_mode = 2
+text = "Preset File (.ini)"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AppConfig/PresetFileSetting"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AppConfig/PresetFileSetting/MarginContainer"]
+layout_mode = 2
+
+[node name="LineEditPresetName" type="LineEdit" parent="AppConfig/PresetFileSetting/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "[Default]"
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AppConfig/PresetFileSetting/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonLoadPreset" type="Button" parent="AppConfig/PresetFileSetting/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Load"
+
+[node name="ButtonSavePreset" type="Button" parent="AppConfig/PresetFileSetting/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
+
+[node name="CanvasSizeSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="LabelCanvasSize" type="Label" parent="AppConfig/CanvasSizeSetting"]
+clip_contents = true
+layout_mode = 2
+text = "Canvas Size"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AppConfig/CanvasSizeSetting"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AppConfig/CanvasSizeSetting/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelCanvasSizeW" type="Label" parent="AppConfig/CanvasSizeSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "W:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpinBoxCanvasW" type="SpinBox" parent="AppConfig/CanvasSizeSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+min_value = 480.0
+max_value = 3840.0
+value = 960.0
+
+[node name="LabelCanvasSizeH" type="Label" parent="AppConfig/CanvasSizeSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "H:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpinBoxCanvasH" type="SpinBox" parent="AppConfig/CanvasSizeSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+min_value = 270.0
+max_value = 2160.0
+value = 540.0
+
+[node name="ToggleHandSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AppConfig/ToggleHandSetting"]
+layout_mode = 2
+
+[node name="LabelToggleHand" type="Label" parent="AppConfig/ToggleHandSetting/HBoxContainer"]
+layout_mode = 2
+text = "Show Hand (and Pen)"
+
+[node name="CheckButtonToggleHand" type="CheckButton" parent="AppConfig/ToggleHandSetting/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+button_pressed = true
+
+[node name="HandFileSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="LabelHandFile" type="Label" parent="AppConfig/HandFileSetting"]
+layout_mode = 2
+text = "Hand Image File (.png)"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AppConfig/HandFileSetting"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AppConfig/HandFileSetting/MarginContainer"]
+layout_mode = 2
+
+[node name="LineEditHandFileName" type="LineEdit" parent="AppConfig/HandFileSetting/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "[Default]"
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AppConfig/HandFileSetting/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonLoadHandImageFile" type="Button" parent="AppConfig/HandFileSetting/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Load"
+
+[node name="ButtonLoadDefaultHandImage" type="Button" parent="AppConfig/HandFileSetting/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Default"
+
+[node name="HandImageScaleSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="LabelHandImageScale" type="Label" parent="AppConfig/HandImageScaleSetting"]
+layout_mode = 2
+text = "Hand Image Scale: 0.75"
+
+[node name="MarginContainer" type="MarginContainer" parent="AppConfig/HandImageScaleSetting"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="HScrollBarHandImageScale" type="HScrollBar" parent="AppConfig/HandImageScaleSetting/MarginContainer"]
+layout_mode = 2
+min_value = 0.1
+max_value = 2.0
+step = 0.05
+value = 0.75
+
+[node name="PenPositionSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="LabelPenposition" type="Label" parent="AppConfig/PenPositionSetting"]
+layout_mode = 2
+text = "Pen Position on Hand Image"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AppConfig/PenPositionSetting"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AppConfig/PenPositionSetting/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelPenpositionX" type="Label" parent="AppConfig/PenPositionSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpinBoxPenPositionX" type="SpinBox" parent="AppConfig/PenPositionSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 2048.0
+value = 768.0
+
+[node name="LabelPenPositionY" type="Label" parent="AppConfig/PenPositionSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Y:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpinBoxPenPositionY" type="SpinBox" parent="AppConfig/PenPositionSetting/MarginContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 2048.0
+value = 256.0
+
+[node name="ToggleHandHorizontalFlip" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AppConfig/ToggleHandHorizontalFlip"]
+layout_mode = 2
+
+[node name="LabelToggleHandHorizontalFlip" type="Label" parent="AppConfig/ToggleHandHorizontalFlip/HBoxContainer"]
+layout_mode = 2
+text = "Flip Hand Horizontally"
+
+[node name="CheckButtonToggleHandHorizontalFlip" type="CheckButton" parent="AppConfig/ToggleHandHorizontalFlip/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="BrushSizeSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="LabelBrushSize" type="Label" parent="AppConfig/BrushSizeSetting"]
+layout_mode = 2
+text = "Brush Size: 32px"
+
+[node name="MarginContainer" type="MarginContainer" parent="AppConfig/BrushSizeSetting"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="HScrollBarBrushSize" type="HScrollBar" parent="AppConfig/BrushSizeSetting/MarginContainer"]
+layout_mode = 2
+min_value = 8.0
+max_value = 128.0
+step = 2.0
+value = 32.0
+
+[node name="BrushColorSetting" type="VBoxContainer" parent="AppConfig"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AppConfig/BrushColorSetting"]
+layout_mode = 2
+
+[node name="LabelColorPicker" type="Label" parent="AppConfig/BrushColorSetting/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Brush Color: "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ColorPickerBrush" type="ColorPickerButton" parent="AppConfig/BrushColorSetting/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.752941, 0.796078, 1)
+
+[node name="LabelBrushAlpha" type="Label" parent="AppConfig/BrushColorSetting"]
+layout_mode = 2
+text = "Brush Alpha: 0.9"
+
+[node name="ButtonContainer" type="MarginContainer" parent="AppConfig"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AppConfig/ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="ButtonResetConfig" type="Button" parent="AppConfig/ButtonContainer/VBoxContainer"]
+self_modulate = Color(0.627451, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Reset Config"
+
+[node name="ButtonClear" type="Button" parent="AppConfig/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Clear Canvas"
+
+[node name="LoadPresetDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(360, 240)
+ok_button_text = "Open"
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.ini ; Preset File")
+
+[node name="SavePresetDialog" type="FileDialog" parent="."]
+title = "Save a Preset File"
+size = Vector2i(392, 240)
+access = 1
+filters = PackedStringArray("*.ini ; Preset File")
+
+[node name="LoadHandImageDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(360, 240)
+ok_button_text = "Open"
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.png ; PNG Image")
+
+[node name="ResetConfigConfirmationDialog" type="ConfirmationDialog" parent="."]
+dialog_text = "Reset All Settings?"
+
+[node name="DefaultConfig" type="Node" parent="."]
+script = ExtResource("3_38b0v")
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="AppConfig/PresetFileSetting/MarginContainer/VBoxContainer/HBoxContainer/ButtonLoadPreset" to="AppConfig" method="_on_button_load_preset_pressed"]
+[connection signal="pressed" from="AppConfig/PresetFileSetting/MarginContainer/VBoxContainer/HBoxContainer/ButtonSavePreset" to="AppConfig" method="_on_button_save_preset_pressed"]
+[connection signal="value_changed" from="AppConfig/CanvasSizeSetting/MarginContainer/HBoxContainer/SpinBoxCanvasW" to="AppConfig" method="_on_spin_box_canvas_w_value_changed"]
+[connection signal="value_changed" from="AppConfig/CanvasSizeSetting/MarginContainer/HBoxContainer/SpinBoxCanvasH" to="AppConfig" method="_on_spin_box_canvas_h_value_changed"]
+[connection signal="toggled" from="AppConfig/ToggleHandSetting/HBoxContainer/CheckButtonToggleHand" to="AppConfig" method="_on_check_button_toggle_hand_toggled"]
+[connection signal="pressed" from="AppConfig/HandFileSetting/MarginContainer/VBoxContainer/VBoxContainer/ButtonLoadHandImageFile" to="AppConfig" method="_on_button_load_hand_image_file_pressed"]
+[connection signal="pressed" from="AppConfig/HandFileSetting/MarginContainer/VBoxContainer/VBoxContainer/ButtonLoadDefaultHandImage" to="AppConfig" method="_on_button_load_default_hand_image_pressed"]
+[connection signal="value_changed" from="AppConfig/HandImageScaleSetting/MarginContainer/HScrollBarHandImageScale" to="AppConfig" method="_on_h_scroll_bar_hand_image_scale_value_changed"]
+[connection signal="value_changed" from="AppConfig/PenPositionSetting/MarginContainer/HBoxContainer/SpinBoxPenPositionX" to="AppConfig" method="_on_spin_box_pen_position_x_value_changed"]
+[connection signal="value_changed" from="AppConfig/PenPositionSetting/MarginContainer/HBoxContainer/SpinBoxPenPositionY" to="AppConfig" method="_on_spin_box_pen_position_y_value_changed"]
+[connection signal="toggled" from="AppConfig/ToggleHandHorizontalFlip/HBoxContainer/CheckButtonToggleHandHorizontalFlip" to="AppConfig" method="_on_check_button_toggle_hand_horizontal_flip_toggled"]
+[connection signal="value_changed" from="AppConfig/BrushSizeSetting/MarginContainer/HScrollBarBrushSize" to="AppConfig" method="_on_h_scroll_bar_brush_size_value_changed"]
+[connection signal="color_changed" from="AppConfig/BrushColorSetting/HBoxContainer/ColorPickerBrush" to="AppConfig" method="_on_color_picker_brush_color_changed"]
+[connection signal="pressed" from="AppConfig/ButtonContainer/VBoxContainer/ButtonResetConfig" to="AppConfig" method="_on_button_reset_config_pressed"]
+[connection signal="pressed" from="AppConfig/ButtonContainer/VBoxContainer/ButtonClear" to="AppConfig" method="_on_button_clear_pressed"]
+[connection signal="file_selected" from="LoadPresetDialog" to="AppConfig" method="_on_load_preset_dialog_file_selected"]
+[connection signal="file_selected" from="SavePresetDialog" to="AppConfig" method="_on_save_preset_dialog_file_selected"]
+[connection signal="file_selected" from="LoadHandImageDialog" to="AppConfig" method="_on_load_hand_image_dialog_file_selected"]
+[connection signal="confirmed" from="ResetConfigConfirmationDialog" to="AppConfig" method="_on_reset_config_confirmation_dialog_confirmed"]
