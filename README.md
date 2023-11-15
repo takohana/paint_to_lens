@@ -7,6 +7,14 @@ Simple paint application.
 - SAVE, OPEN IMAGE TO/FROM FILE
 - UNDO & REDO
 
+## User Custom Image File Location
+
+%APPDATA%\Roaming\Godot\app_userdata\paint_to_lens\img
+
+Might be...
+
+C:\Users\USER_NAME\AppData\Roaming\Godot\app_userdata\paint_to_lens\img
+
 
 ## Main Window (transparent background)
 
